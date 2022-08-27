@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 956ca3718be4ae548a06f011eb65616e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - currentCard: {instanceID: 0}
+  - playerControlState: {instanceID: 0}
+  - onPlayerControlState: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
