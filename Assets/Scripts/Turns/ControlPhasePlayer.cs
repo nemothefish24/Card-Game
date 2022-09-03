@@ -33,8 +33,10 @@ public class ControlPhasePlayer : Phase
     public override void OnStartPhase()
     {
         if(!isInit)
-        {
+        {   
+            Debug.Log(this.name + "starts.");
             Settings.gameManager.SetState(playerControlState);
+            Settings.gameManager.onPhaseChanged.Raise();
 
             isInit = true;
         }

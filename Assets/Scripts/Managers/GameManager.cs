@@ -14,10 +14,16 @@ public class GameManager : MonoBehaviour
     public int turnIndex;
     public Turn[] turns; 
 
+    public SO.GameEvent onTurnChanged;
+    public SO.GameEvent onPhaseChanged; 
+    public SO.StringVariable turnText;
+
     private void Start()
     {
         Settings.gameManager = this; 
         CreateStartingCards();
+        turnText.value = turns[turnIndex].turnName;
+        onTurnChanged.Raise();
     }
 
     void CreateStartingCards()
@@ -40,12 +46,15 @@ public class GameManager : MonoBehaviour
         bool isComplete = turns[turnIndex].Execute();
 
         if (isComplete)
-        {
+        {               
             turnIndex++;
             if(turnIndex > turns.Length-1)
             {
                 turnIndex = 0;
             }
+
+            turnText.value = turns[turnIndex].turnName; //sets the turn text 
+            onTurnChanged.Raise(); //raises the event for turn change
         }
 
         if (currentState != null)
