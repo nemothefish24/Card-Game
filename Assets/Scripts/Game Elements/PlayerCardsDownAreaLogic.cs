@@ -18,7 +18,7 @@ public class PlayerCardsDownAreaLogic : AreaLogic
         if (card.value == null)
             return;
         
-        if (card.value.viz.card.cardType == attackType) //checks if the card is of a certain type
+        if (card.value.viz.card.cardType != null) //checks if the card is of a certain type
         { //Places card down
             Settings.SetParentForCard(card.value.transform, areaGrid.value.transform);
             

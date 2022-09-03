@@ -537,9 +537,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 11400000, guid: b0d8ad66fce2d7041892d05c79ab61ba, type: 2}
-  currentState: {fileID: 11400000, guid: f007bcf187465ea49a8e98525a47c4b1, type: 2}
+  currentState: {fileID: 0}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
+  turnIndex: 0
+  turns:
+  - {fileID: 11400000, guid: 6ad66cf833139ed42a7140c4da83551e, type: 2}
+  - {fileID: 11400000, guid: 7dbd9b456d8f84e47a4ab0e5b80803af, type: 2}
 --- !u!4 &754791534
 Transform:
   m_ObjectHideFlags: 0
@@ -746,7 +750,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
 --- !u!114 &1152167265
@@ -945,7 +949,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
 --- !u!1 &1405309053
