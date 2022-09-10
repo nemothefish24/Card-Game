@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     {
         Settings.gameManager = this; 
         CreateStartingCards();
-        turnText.value = turns[turnIndex].turnName;
+        turnText.value = turns[turnIndex].player.username;
         onTurnChanged.Raise();
     }
 
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
                 turnIndex = 0;
             }
 
-            turnText.value = turns[turnIndex].turnName; //sets the turn text 
+            turnText.value = turns[turnIndex].player.username; //sets the turn text 
             onTurnChanged.Raise(); //raises the event for turn change
         }
 

@@ -8,6 +8,7 @@ namespace AK
 [CreateAssetMenu(menuName = "Turns/Turn")]
 public class Turn : ScriptableObject
 {   
+    public ActorHolder player;
     public string turnName; 
     [System.NonSerialized]
     public int index = 0;

@@ -30,3 +30,7 @@ MonoBehaviour:
     intValue: 1
     sprite: {fileID: 0}
     element: {fileID: 11400000, guid: 44f4c6db6e8137842ad48c11107bdad1, type: 2}
+  - stringValue: 
+    intValue: 1
+    sprite: {fileID: 0}
+    element: {fileID: 11400000, guid: f2bc9050fe5013c4bbc1b1218440a549, type: 2}
