@@ -10,7 +10,10 @@ public class PlayerCardsDownAreaLogic : AreaLogic
 {   
     public CardVariable card;
     public CardType attackType;
+    public CardType utilityType; 
+    
     public SO.TransformVariable areaGrid;
+    
     public GameElements.GE_Logic cardDownLogic;
 
     public override void Execute()
@@ -18,13 +21,22 @@ public class PlayerCardsDownAreaLogic : AreaLogic
         if (card.value == null)
             return;
         
-        if (card.value.viz.card.cardType != null) //checks if the card is of a certain type
+        if (card.value.viz.card.cardType == attackType) //checks if the card is of a certain type
         { //Places card down
             Settings.SetParentForCard(card.value.transform, areaGrid.value.transform);
             
             card.value.gameObject.SetActive(true);
             card.value.currentLogic = cardDownLogic;
         }
+
+        else
+        if (card.value.viz.card.cardType == utilityType) //checks if the card is of a certain type
+        { //Places card down
+            Settings.SetParentForCard(card.value.transform, areaGrid.value.transform);
+            
+            card.value.gameObject.SetActive(true);
+            card.value.currentLogic = cardDownLogic;
+        } 
     }
 }
 }
