@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119a1798caf992045a8672295a995233, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  username: 
   startingCards:
   - Donk
   - Glare
   handGrid: {fileID: 11400000, guid: 57f2fd6088e0eda4892e283bb150f2e7, type: 2}
+  chipsGrid: {fileID: 11400000, guid: 654c7f9ad12188d45a36ac18ca114f06, type: 2}
   downGrid: {fileID: 11400000, guid: 6d302bacf94a31f47aebe7094d7baf82, type: 2}
   handLogic: {fileID: 11400000, guid: 0e34d568d784603439c4856b606aa499, type: 2}
   downLogic: {fileID: 11400000, guid: 5a78069f126788b4abeb18c8b3fa5ae2, type: 2}

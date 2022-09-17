@@ -9,10 +9,11 @@ namespace AK
 [CreateAssetMenu(menuName = "Holders/Actor Holder")]
 public class ActorHolder : ScriptableObject
 {   
-    
+
     public string username; 
     public string[] startingCards;
     public SO.TransformVariable handGrid;
+    public SO.TransformVariable chipsGrid;
     public SO.TransformVariable downGrid;
 
     public GE_Logic handLogic;
