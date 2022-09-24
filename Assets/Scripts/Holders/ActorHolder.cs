@@ -18,6 +18,10 @@ public class ActorHolder : ScriptableObject
     
     public ChipsHolder chips; 
 
+    public int chipsperTurn;
+    [System.NonSerialized]
+    public int chipsUsedThisTurn;
+
     public GE_Logic handLogic;
     public GE_Logic downLogic; 
 
@@ -58,7 +62,7 @@ public class ActorHolder : ScriptableObject
 
     public bool CanUseChips(ChipsHolder c)
     {
-        bool result;
+        bool result = true;
 
         int currentChips = NonUsedChips();
 
@@ -69,5 +73,24 @@ public class ActorHolder : ScriptableObject
 
         return result;
     }
+
+    public void UseChips (int amount)
+    {
+         //need to integrate player selection of how many chips to use
+        int remainingChips;
+
+        int currentChips = NonUsedChips();
+
+        remainingChips = currentChips - chipsUsedThisTurn; 
+    }
+
+    public int GetUnusedChips()
+    {
+       int unusedChips = NonUsedChips();
+       return unusedChips;
+
+    }    
+
 }
+
 }

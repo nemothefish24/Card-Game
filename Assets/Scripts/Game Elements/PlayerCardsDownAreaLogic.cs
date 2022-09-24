@@ -23,7 +23,7 @@ public class PlayerCardsDownAreaLogic : AreaLogic
         
         if (card.value.viz.card.cardType == attackType) //checks if the card is of a certain type
         { //Places card down
-            Settings.SetParentForCard(card.value.transform, areaGrid.value.transform);
+            Settings.DropAttackCard(card.value.transform, areaGrid.value.transform);
             
             card.value.gameObject.SetActive(true);
             card.value.currentLogic = cardDownLogic;
