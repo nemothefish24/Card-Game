@@ -77,11 +77,11 @@ public class ActorHolder : ScriptableObject
     public void UseChips (int amount)
     {
          //need to integrate player selection of how many chips to use
-        int remainingChips;
+        
 
         int currentChips = NonUsedChips();
 
-        remainingChips = currentChips - chipsUsedThisTurn; 
+        currentChips -= chipsUsedThisTurn; 
     }
 
     public int GetUnusedChips()

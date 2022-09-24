@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 namespace AK
 {
+
+[CreateAssetMenu(menuName = "Holders/Chips Holder")]
 public class ChipsHolder : ScriptableObject
 {   
     public bool isUsed;
