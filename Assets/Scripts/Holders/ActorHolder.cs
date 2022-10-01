@@ -18,12 +18,17 @@ public class ActorHolder : ScriptableObject
     
     public ChipsHolder chips; 
 
-    public int chipsperTurn;
+    public bool isHumanPlayer;
+
+    public int chipsPerTurn;
     [System.NonSerialized]
     public int chipsUsedThisTurn;
 
     public GE_Logic handLogic;
     public GE_Logic downLogic; 
+
+    [System.NonSerialized]
+    public CardHolders currentHolder;
 
     [System.NonSerialized]
     public List<CardInstance> handCards = new List<CardInstance>();

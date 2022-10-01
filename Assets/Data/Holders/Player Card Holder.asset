@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452d0aa875b9a38459d6ae04cbc03bc4, type: 3}
-  m_Name: ChipsHolder
+  m_Script: {fileID: 11500000, guid: 3ac0f32e7a04a5745a2b700f76db98f8, type: 3}
+  m_Name: Player Card Holder
   m_EditorClassIdentifier: 
-  isUsed: 0
-  chipObject: {fileID: 0}
-  chipsCount: 100
+  handGrid: {fileID: 11400000, guid: 57f2fd6088e0eda4892e283bb150f2e7, type: 2}
   chipsGrid: {fileID: 11400000, guid: 654c7f9ad12188d45a36ac18ca114f06, type: 2}
+  downGrid: {fileID: 11400000, guid: 6d302bacf94a31f47aebe7094d7baf82, type: 2}

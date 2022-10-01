@@ -7,7 +7,10 @@ namespace AK
 {
 public class GameManager : MonoBehaviour
 {   
+    public ActorHolder[] all_Actors;
     public ActorHolder currentPlayer;
+    public CardHolders playerHolder;
+    public CardHolders enemyHolder;
     public State currentState;
     public GameObject cardPrefab;
     
@@ -21,9 +24,27 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Settings.gameManager = this; 
+
+        SetUpPlayers();
+
         CreateStartingCards();
         turnText.value = turns[turnIndex].player.username;
         onTurnChanged.Raise();
+    }
+
+    void SetUpPlayers()
+    {
+        foreach (ActorHolder a in all_Actors)
+        {
+            if (a.isHumanPlayer)
+            {
+                a.currentHolder = playerHolder;
+            }
+
+            else{
+                a.currentHolder = enemyHolder;
+            }
+        }
     }
 
     void CreateStartingCards()
@@ -64,6 +85,11 @@ public class GameManager : MonoBehaviour
     public void SetState(State state) //control the state you want to go in 
     {
         currentState = state; 
+    }
+
+    public void EndCurrentPhase()
+    {
+        turns[turnIndex].EndCurrentPhase();
     }
 }
 }

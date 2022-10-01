@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034edd6a9f7307741b5b416ea4dd83d9, type: 3}
-  m_Name: My Chips Grid Transform
+  m_Script: {fileID: 11500000, guid: 3ac0f32e7a04a5745a2b700f76db98f8, type: 3}
+  m_Name: Enemy Card Holder
   m_EditorClassIdentifier: 
-  value: {fileID: 0}
+  handGrid: {fileID: 0}
+  chipsGrid: {fileID: 0}
+  downGrid: {fileID: 0}
