@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUsed: 0
   chipObject: {fileID: 0}
-  chipsCount: 0
-  chipsGrid: {fileID: 0}
+  chipsCount: 100
+  chipsGrid: {fileID: 11400000, guid: 654c7f9ad12188d45a36ac18ca114f06, type: 2}
