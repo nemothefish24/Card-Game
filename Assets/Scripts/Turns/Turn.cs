@@ -42,5 +42,10 @@ public class Turn : ScriptableObject
         return result;
     }
 
+    public void EndCurrentPhase()
+    {
+        phases[index].forceExit = true;
+    }
+
 }
 }

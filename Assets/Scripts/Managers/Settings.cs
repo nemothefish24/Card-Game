@@ -35,6 +35,11 @@ public static class Settings
         return results; 
     }
 
+    public static void DropAttackCard(Transform c, Transform p)
+    {
+        SetParentForCard(c, p);
+    }
+
     public static void SetParentForCard(Transform c, Transform p)
     {
         c.SetParent(p);

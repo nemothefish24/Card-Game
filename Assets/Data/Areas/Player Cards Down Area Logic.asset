@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 17377bd6e92c7e949bda705b44b2e50b, type: 2}
   attackType: {fileID: 11400000, guid: ce123b98eacd97a4b9d4f9eb6fda31bc, type: 2}
+  utilityType: {fileID: 11400000, guid: 029864d97bb9389499655dd2523a7f6f, type: 2}
   areaGrid: {fileID: 11400000, guid: 6d302bacf94a31f47aebe7094d7baf82, type: 2}
+  chipsGrid: {fileID: 11400000, guid: 654c7f9ad12188d45a36ac18ca114f06, type: 2}
+  cardDownLogic: {fileID: 11400000, guid: 5a78069f126788b4abeb18c8b3fa5ae2, type: 2}
