@@ -2,39 +2,93 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace AK
+{
 public class DrawCards : MonoBehaviour
 {
-    public GameObject actionCard1; 
-    public GameObject actionCard2;
+    ResourcesManager rm;
     
+    public List<Card> discardPile = new List<Card>();
+    public List <Card> playerHand = new List <Card>();
+
+    public List<Card> playerDeck = new List<Card>();
 
     public GameObject PlayerArea;
     public GameObject EnemyArea; 
 
-    List <GameObject> playerDeck = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        playerDeck.Add(actionCard1);
-        playerDeck.Add(actionCard2);
+        for (int i = 0; i<rm.allCards.Length; i++)
+        {
+            playerDeck.Add(rm.allCards[i]); //temporary, will change what cards are initially added to playerDeck
+
+            
+        }
+
     }
 
-    public void OnClick()
-    {   //create new playerCard 
+    
 
-        for (int i = 0; i < 5; i++)
+    public void DrawPlayerHand() //randomly generates the starting cards 
+    {   
+
+        if (playerDeck.Count >= 5)
         {
-            GameObject playerCard = Instantiate(playerDeck[Random.Range(0,playerDeck.Count)], new Vector3(0, 0, 0), Quaternion.identity);
-            
-            //Sets it so that the card becomes a child of the PlayerArea so it nests in the canvas 
-            playerCard.transform.SetParent(PlayerArea.transform, false);
-
-            GameObject enemyCard = Instantiate(actionCard1, new Vector3(0,0,0), Quaternion.identity);
-            enemyCard.transform.SetParent(EnemyArea.transform,false);
+            for (int i = 0; i < 5; i++)
+            {
+                Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
+                playerDeck.Remove(randCard);
+                playerHand.Add(randCard);
+                
+                
+                //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
+            }
         }
         
+        else 
+            {
+                int remainingCards = (5-playerDeck.Count);
+                
+                for (int i = 0; i <playerDeck.Count; i++)
+                {
+                    Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
+                    playerDeck.Remove(randCard);
+                    playerHand.Add(randCard);
+                }
 
+                int refreshCount = discardPile.Count;
+
+                for (int i = 0; i < refreshCount; i++)
+                {
+                    Card refreshCard = discardPile[0];
+                    discardPile.Remove(refreshCard);
+                    playerDeck.Add(refreshCard);
+                }
+
+                for (int i = 0; i<remainingCards; i++)
+                {
+                    Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
+                    playerDeck.Remove(randCard);
+                    playerHand.Add(randCard);
+                }
+            }
+        
+    }
+
+        public void OnClick()
+        
+        
+        {//create new playerCard 
+
+        DrawPlayerHand();
+
+        
+        
+        
+    }
         
     }
 }

@@ -22,7 +22,7 @@ public class CardHolders : ScriptableObject
 
         foreach (CardInstance c in h.handCards)
         {
-            c.viz.gameObject.transform.SetParent(downGrid.value.transform);
+            c.viz.gameObject.transform.SetParent(handGrid.value.transform);
 
         }
 

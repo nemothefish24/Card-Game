@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cbc31786dd6b734fa5af858721d7f9b, type: 3}
+  m_Name: Bomb
+  m_EditorClassIdentifier: 
+  cardType: {fileID: 11400000, guid: ce123b98eacd97a4b9d4f9eb6fda31bc, type: 2}
+  properties:
+  - stringValue: Bomb
+    intValue: 0
+    sprite: {fileID: 0}
+    element: {fileID: 11400000, guid: 071247f8109970c4f8b156b85083aa0a, type: 2}
+  - stringValue: Fat attack
+    intValue: 0
+    sprite: {fileID: 21300000, guid: c7bf45f0ef95bed4491c5809fc6bf484, type: 3}
+    element: {fileID: 11400000, guid: 3fd3410e9828e8d4cb04c6efe5167cf6, type: 2}
+  - stringValue: 
+    intValue: 0
+    sprite: {fileID: 0}
+    element: {fileID: 11400000, guid: 112a4f90a6a89ba4ca547a0430742b5e, type: 2}
+  - stringValue: 
+    intValue: 1
+    sprite: {fileID: 0}
+    element: {fileID: 11400000, guid: 44f4c6db6e8137842ad48c11107bdad1, type: 2}
+  - stringValue: 
+    intValue: 5
+    sprite: {fileID: 0}
+    element: {fileID: 11400000, guid: f2bc9050fe5013c4bbc1b1218440a549, type: 2}

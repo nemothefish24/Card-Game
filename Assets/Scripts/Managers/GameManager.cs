@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     void CreateStartingCards()
     {
         ResourcesManager rm = Settings.GetResourcesManager();
+        currentPlayer.pickStartingCards();
 
         for (int i = 0; i < currentPlayer.startingCards.Length; i++) //instantiates the starting cards
         {

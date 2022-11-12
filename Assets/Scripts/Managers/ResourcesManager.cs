@@ -9,6 +9,8 @@ public class ResourcesManager : ScriptableObject
 {
    public Element typeElement;
    public Card[] allCards;
+
+   
    Dictionary<string, Card> cardsDict = new Dictionary<string, Card>();
 
    public void Init() //initialization of the dictionary

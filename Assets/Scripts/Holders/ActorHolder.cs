@@ -11,7 +11,9 @@ public class ActorHolder : ScriptableObject
 {   
 
     public string username; 
-    public string[] startingCards;
+    public string[] startingCards;  
+    string[] allCardStrings;
+
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
     public SO.TransformVariable downGrid;
@@ -19,6 +21,8 @@ public class ActorHolder : ScriptableObject
     public ChipsHolder chips; 
 
     public bool isHumanPlayer;
+
+    public ResourcesManager resources;
 
     public int chipsPerTurn;
     [System.NonSerialized]
@@ -35,6 +39,23 @@ public class ActorHolder : ScriptableObject
     [System.NonSerialized]
     public List <CardInstance> cardsDown = new List<CardInstance>();
 
+    
+    public string[] pickStartingCards()
+    {   
+        for (int i = 0; i < resources.allCards.Length; i++)
+            {
+                allCardStrings[i] = resources.allCards[i].ToString();
+            }
+
+        
+
+        for (int i = 0; i < 5; i++)
+            {
+                startingCards[i] = allCardStrings[Random.Range(0, allCardStrings.Length)];
+            }
+        
+        return startingCards;
+    }
 
     public int chipsCount()
     {
@@ -97,5 +118,4 @@ public class ActorHolder : ScriptableObject
     }    
 
 }
-
 }
