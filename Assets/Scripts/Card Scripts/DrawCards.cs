@@ -8,39 +8,28 @@ namespace AK
 public class DrawCards : MonoBehaviour
 {
     ResourcesManager rm;
+    ActorHolder actor;
     
     public List<Card> discardPile = new List<Card>();
     public List <Card> playerHand = new List <Card>();
 
-    public List<Card> playerDeck = new List<Card>();
+    
 
     public GameObject PlayerArea;
     public GameObject EnemyArea; 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        for (int i = 0; i<rm.allCards.Length; i++)
-        {
-            playerDeck.Add(rm.allCards[i]); //temporary, will change what cards are initially added to playerDeck
-
-            
-        }
-
-    }
-
     
 
-    public void DrawPlayerHand() //randomly generates the starting cards 
+    public void DrawPlayerHand() //randomly draws cards
     {   
 
-        if (playerDeck.Count >= 5)
+        if (actor.playerDeck.Count >= 5)
         {
             for (int i = 0; i < 5; i++)
             {
-                Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
-                playerDeck.Remove(randCard);
+                Card randCard = actor.playerDeck[Random.Range(0, actor.playerDeck.Count)];
+                actor.playerDeck.Remove(randCard);
                 playerHand.Add(randCard);
                 
                 
@@ -50,12 +39,12 @@ public class DrawCards : MonoBehaviour
         
         else 
             {
-                int remainingCards = (5-playerDeck.Count);
+                int remainingCards = (5-actor.playerDeck.Count);
                 
-                for (int i = 0; i <playerDeck.Count; i++)
+                for (int i = 0; i <actor.playerDeck.Count; i++)
                 {
-                    Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
-                    playerDeck.Remove(randCard);
+                    Card randCard = actor.playerDeck[Random.Range(0, actor.playerDeck.Count)];
+                    actor.playerDeck.Remove(randCard);
                     playerHand.Add(randCard);
                 }
 
@@ -65,13 +54,13 @@ public class DrawCards : MonoBehaviour
                 {
                     Card refreshCard = discardPile[0];
                     discardPile.Remove(refreshCard);
-                    playerDeck.Add(refreshCard);
+                    actor.playerDeck.Add(refreshCard);
                 }
 
                 for (int i = 0; i<remainingCards; i++)
                 {
-                    Card randCard = playerDeck[Random.Range(0, playerDeck.Count)];
-                    playerDeck.Remove(randCard);
+                    Card randCard = actor.playerDeck[Random.Range(0, actor.playerDeck.Count)];
+                    actor.playerDeck.Remove(randCard);
                     playerHand.Add(randCard);
                 }
             }

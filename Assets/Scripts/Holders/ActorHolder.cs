@@ -14,6 +14,10 @@ public class ActorHolder : ScriptableObject
     public string[] startingCards;  
     string[] allCardStrings;
 
+    string[] playerDeckStrings;
+
+    public List<Card> playerDeck = new List<Card>();
+
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
     public SO.TransformVariable downGrid;
@@ -40,18 +44,35 @@ public class ActorHolder : ScriptableObject
     public List <CardInstance> cardsDown = new List<CardInstance>();
 
     
+    // Start is called before the first frame update
+
+    /*
+    void Start()
+    {
+        for (int i = 0; i<resources.allCards.Length; i++)
+        {
+            playerDeck.Add(resources.allCards[i]); //temporary, will change what cards are initially added to playerDeck
+
+            
+        }
+
+    }
+    */
     public string[] pickStartingCards()
     {   
-        for (int i = 0; i < resources.allCards.Length; i++)
+        playerDeckStrings = new string[playerDeck.Count];
+        startingCards = new string[5]; 
+
+        for (int i = 0; i < playerDeck.Count; i++)
             {
-                allCardStrings[i] = resources.allCards[i].ToString();
+                playerDeckStrings[i] = playerDeck[i].ToString();
             }
 
         
 
         for (int i = 0; i < 5; i++)
             {
-                startingCards[i] = allCardStrings[Random.Range(0, allCardStrings.Length)];
+                startingCards[i] = playerDeckStrings[Random.Range(0, playerDeckStrings.Length)];
             }
         
         return startingCards;

@@ -31,6 +31,7 @@ public class ResourcesManager : ScriptableObject
       
       Card newInst = Instantiate(originalCard);
       newInst.name = originalCard.name;
+      
       return newInst; 
    }
 

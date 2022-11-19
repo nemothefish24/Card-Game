@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     {
         Settings.gameManager = this; 
 
+        currentPlayer.isHumanPlayer = true;
+        currentPlayer.currentHolder = playerHolder;
+
         SetUpPlayers();
 
         CreateStartingCards();
@@ -36,24 +39,20 @@ public class GameManager : MonoBehaviour
     {
         foreach (ActorHolder a in all_Actors)
         {
-            if (a.isHumanPlayer)
-            {
-                a.currentHolder = playerHolder;
-            }
-
-            else{
-                a.currentHolder = enemyHolder;
-            }
+            
+                a.currentHolder = playerHolder;          
+              
         }
     }
 
     void CreateStartingCards()
-    {
+    {   
         ResourcesManager rm = Settings.GetResourcesManager();
         currentPlayer.pickStartingCards();
 
         for (int i = 0; i < currentPlayer.startingCards.Length; i++) //instantiates the starting cards
-        {
+        {   
+            
             GameObject go = Instantiate(cardPrefab) as GameObject;
             CardViz v = go.GetComponent<CardViz>();
             v.LoadCard(rm.GetCardInstance(currentPlayer.startingCards[i])); //gets the instance and loads onto CardViz

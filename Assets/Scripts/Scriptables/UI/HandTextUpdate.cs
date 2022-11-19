@@ -17,7 +17,7 @@ namespace SO.UI
         /// </summary>
         public void HandUpdate()
         {
-            Debug.Log(calc.playercardtext);
+            //Debug.Log(calc.playercardtext);
             targetText.text = calc.playerhandtype + "\n" + calc.playercardtext;
         }
 
