@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public CardHolders enemyHolder;
     public State currentState;
     public GameObject cardPrefab;
+
+    public List <Card> playerHand = new List <Card>(); 
     
     public int turnIndex;
     public Turn[] turns; 
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
             GameObject go = Instantiate(cardPrefab) as GameObject;
             CardViz v = go.GetComponent<CardViz>();
             v.LoadCard(rm.GetCardInstance(currentPlayer.startingCards[i])); //gets the instance and loads onto CardViz
+            
+            
             CardInstance inst = go.GetComponent<CardInstance>();
             inst.currentLogic = currentPlayer.handLogic;
             Settings.SetParentForCard(go.transform, currentPlayer.handGrid.value);

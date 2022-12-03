@@ -16,6 +16,10 @@ public class ActorHolder : ScriptableObject
 
     string[] playerDeckStrings;
 
+    List <Card> startingCardObjects = new List<Card>();
+
+    public List <Card> playerHand = new List <Card>();
+
     public List<Card> playerDeck = new List<Card>();
 
     public SO.TransformVariable handGrid;
@@ -65,7 +69,7 @@ public class ActorHolder : ScriptableObject
 
         for (int i = 0; i < playerDeck.Count; i++)
             {
-                playerDeckStrings[i] = playerDeck[i].ToString();
+                playerDeckStrings[i] = playerDeck[i].name.ToString();
             }
 
         
@@ -73,6 +77,7 @@ public class ActorHolder : ScriptableObject
         for (int i = 0; i < 5; i++)
             {
                 startingCards[i] = playerDeckStrings[Random.Range(0, playerDeckStrings.Length)];
+                
             }
         
         return startingCards;

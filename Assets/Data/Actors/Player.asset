@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   username: Player
   startingCards:
-  - Glare (AK.Card)
-  - Donk (AK.Card)
-  - Taunt (AK.Card)
-  - Slap (AK.Card)
-  - Needle (AK.Card)
+  - Taunt
+  - Taunt
+  - Taunt
+  - Taunt
+  - Taunt
   playerDeck:
   - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
   - {fileID: 11400000, guid: 11229c431a6e8414a88da5716672398a, type: 2}

@@ -23,9 +23,9 @@ public class CurrentSelected : MonoBehaviour
 
     public void CloseCard()
     {   
-        Debug.Log ("card closed");
+        
         cardViz.gameObject.SetActive(false);
-        Debug.Log ("card disappeared");
+        
     }
 
      private void Start()
