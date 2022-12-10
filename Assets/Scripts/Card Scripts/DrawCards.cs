@@ -27,12 +27,12 @@ public class DrawCards : MonoBehaviour
         playerHandtoString();
         ResourcesManager rm = Settings.GetResourcesManager();
 
-        if (currentPlayer.playerDeck.Count >= 5)
+        if (currentPlayer.playerDeck.deckCards.Count >= 5)
         {
             for (int i = 0; i < 5; i++)
             {
-                Card randCard = currentPlayer.playerDeck[Random.Range(0, currentPlayer.playerDeck.Count)];
-                currentPlayer.playerDeck.Remove(randCard);
+                Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
+                currentPlayer.playerDeck.deckCards.Remove(randCard);
                 currentPlayer.playerHand.Add(randCard);
                 
                 
@@ -42,15 +42,15 @@ public class DrawCards : MonoBehaviour
         
         else
             {   
-                if(currentPlayer.playerDeck.Count > 0)
+                if(currentPlayer.playerDeck.deckCards.Count > 0)
                 {
 
-                    int remainingCards = (5-currentPlayer.playerDeck.Count);
+                    int remainingCards = (5-currentPlayer.playerDeck.deckCards.Count);
                     
-                    for (int i = 0; i <currentPlayer.playerDeck.Count; i++)
+                    for (int i = 0; i <currentPlayer.playerDeck.deckCards.Count; i++)
                     {
-                        Card randCard = currentPlayer.playerDeck[Random.Range(0, currentPlayer.playerDeck.Count)];
-                        currentPlayer.playerDeck.Remove(randCard);
+                        Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
+                        currentPlayer.playerDeck.deckCards.Remove(randCard);
                         currentPlayer.playerHand.Add(randCard);
                     }
 
@@ -60,32 +60,32 @@ public class DrawCards : MonoBehaviour
                     {
                         Card refreshCard = discardPile[0];
                         discardPile.Remove(refreshCard);
-                        currentPlayer.playerDeck.Add(refreshCard);
+                        currentPlayer.playerDeck.deckCards.Add(refreshCard);
                     }
 
                     for (int i = 0; i< remainingCards; i++)
                     {
-                        Card randCard = currentPlayer.playerDeck[Random.Range(0, currentPlayer.playerDeck.Count)];
-                        currentPlayer.playerDeck.Remove(randCard);
+                        Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
+                        currentPlayer.playerDeck.deckCards.Remove(randCard);
                         currentPlayer.playerHand.Add(randCard);
                     }
                 }
 
-                else
+        else
+            {
+                for (int i = 0; i < discardPile.Count; i++)
                 {
-                    for (int i = 0; i < discardPile.Count; i++)
-                    {
-                        currentPlayer.playerDeck.Add(discardPile[i]);
-                    }
-
-                    for (int i = 0; i < 5; i++)
-                    {
-                    Card randCard = currentPlayer.playerDeck[Random.Range(0, currentPlayer.playerDeck.Count)];
-                    currentPlayer.playerDeck.Remove(randCard);
-                    currentPlayer.playerHand.Add(randCard);
-                    
-                    }
+                    currentPlayer.playerDeck.deckCards.Add(discardPile[i]);
                 }
+
+                for (int i = 0; i < 5; i++)
+                {
+                Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
+                currentPlayer.playerDeck.deckCards.Remove(randCard);
+                currentPlayer.playerHand.Add(randCard);
+                
+                }
+            }
 
             }
 
@@ -121,7 +121,7 @@ public class DrawCards : MonoBehaviour
     
     public void OnClick()
         
-    {//create new playerCard 
+    {
 
         Debug.Log("Button clicked.");
 
@@ -129,5 +129,21 @@ public class DrawCards : MonoBehaviour
 
     }
         
+    
+
+    public void AddToDiscard()
+    {
+        for (int i = 0; i< 5; i++)
+        {   Card usedCard = currentPlayer.playerHand[0];
+            currentPlayer.playerHand.Remove(usedCard);
+            discardPile.Add(usedCard);
+        }
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown("o"))
+            AddToDiscard();
+    }
+}
 }

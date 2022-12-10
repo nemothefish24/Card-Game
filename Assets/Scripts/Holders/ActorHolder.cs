@@ -16,11 +16,13 @@ public class ActorHolder : ScriptableObject
 
     string[] playerDeckStrings;
 
+    public PlayerDeck playerDeck;
+
     List <Card> startingCardObjects = new List<Card>();
 
     public List <Card> playerHand = new List <Card>();
 
-    public List<Card> playerDeck = new List<Card>();
+    
 
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
@@ -64,12 +66,12 @@ public class ActorHolder : ScriptableObject
     */
     public string[] pickStartingCards()
     {   
-        playerDeckStrings = new string[playerDeck.Count];
+        playerDeckStrings = new string[playerDeck.deckCards.Count];
         startingCards = new string[5]; 
 
-        for (int i = 0; i < playerDeck.Count; i++)
+        for (int i = 0; i < playerDeck.deckCards.Count; i++)
             {
-                playerDeckStrings[i] = playerDeck[i].name.ToString();
+                playerDeckStrings[i] = playerDeck.deckCards[i].name.ToString();
             }
 
         
