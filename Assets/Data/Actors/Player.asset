@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   username: Player
-  startingCards:
-  - Bomb
-  - Bomb
-  - Bomb
-  - Bomb
-  - Bomb
+  startingCards: []
   playerDeck: {fileID: 11400000, guid: 45b0b74e86512a44bacb2d54f3bbaece, type: 2}
   playerHand: []
   handGrid: {fileID: 11400000, guid: 57f2fd6088e0eda4892e283bb150f2e7, type: 2}

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3e83e07c01b6b40b7cee9436ec0edc, type: 3}
   m_Name: Player Deck Holder
   m_EditorClassIdentifier: 
-  deckCards:
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
+  chosenDeck:
+  - Bomb
+  - Donk
+  - Glare
+  - Needle
+  - Slap
+  - Taunt
+  startingDeck: []
+  deckCards: []
