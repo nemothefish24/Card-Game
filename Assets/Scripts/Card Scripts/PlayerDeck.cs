@@ -9,21 +9,12 @@ public class PlayerDeck : ScriptableObject
 {   
     ActorHolder actor;
 
-    public List<string> chosenDeck = new List<string>();
+    public List<Card> chosenDeck = new List<Card>();
 
-    public List<string> startingDeck = new List<string>();
+    public List<Card> startingDeck = new List<Card>();
     public List<Card> deckCards = new List<Card>();
 
-    void Start()
-    {   
-        for (int i = 0; i < chosenDeck.Count; i++)
-        {
-            startingDeck[i] = chosenDeck[i];
-        
-        }
-
-        
-    }
+    
 
 
 }

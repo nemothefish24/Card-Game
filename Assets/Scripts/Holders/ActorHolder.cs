@@ -21,9 +21,7 @@ public class ActorHolder : ScriptableObject
     List <Card> startingCardObjects = new List<Card>();
 
     public List <Card> playerHand = new List <Card>();
-
-    
-
+  
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
     public SO.TransformVariable downGrid;
@@ -66,6 +64,47 @@ public class ActorHolder : ScriptableObject
     */
     public string[] pickStartingCards()
     {   
+        playerDeck.startingDeck.Clear();
+        playerDeck.deckCards.Clear();
+
+        for (int i = 0; i < playerDeck.chosenDeck.Count; i++)
+        {   
+            
+            playerDeck.startingDeck.Add(playerDeck.chosenDeck[i]);
+            
+        }
+
+
+
+        for (int i = 0; i < playerDeck.chosenDeck.Count; i++)
+        {
+            
+            playerDeck.deckCards.Add(playerDeck.startingDeck[i]);
+        
+        }
+
+        if (playerDeck.deckCards.Count >= 5)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Card randCard = playerDeck.deckCards[Random.Range(0, playerDeck.deckCards.Count)];
+                playerDeck.deckCards.Remove(randCard);
+                playerHand.Add(randCard);
+                
+                
+                //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
+            }
+        }
+
+        for (int i = 0; i < 5; i++)
+            {
+                startingCards[i] = playerHand[i].name;
+                
+                
+                //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
+            }
+
+        /*
         playerDeckStrings = new string[playerDeck.deckCards.Count];
         startingCards = new string[5]; 
 
@@ -82,8 +121,12 @@ public class ActorHolder : ScriptableObject
                 
             }
         
+        */
         return startingCards;
+        
     }
+
+
 
     public int chipsCount()
     {

@@ -24,7 +24,7 @@ public class DrawCards : MonoBehaviour
 
     public void DrawPlayerHand() //randomly draws cards
     {   
-        playerHandtoString();
+        
         ResourcesManager rm = Settings.GetResourcesManager();
 
         if (currentPlayer.playerDeck.deckCards.Count >= 5)
@@ -88,6 +88,8 @@ public class DrawCards : MonoBehaviour
             }
 
             }
+
+        playerHandtoString();
 
         for (int i = 0; i < playerHandStrings.Length; i++) //instantiates the cards
             
