@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   username: Player
   startingCards:
-  - Bomb
   - Needle
-  - Donk
   - Slap
   - Glare
+  - Donk
+  - Bomb
   playerDeck: {fileID: 11400000, guid: 45b0b74e86512a44bacb2d54f3bbaece, type: 2}
   playerHand:
-  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
   - {fileID: 11400000, guid: 6ece02f76abea5c4bb38b334136617e3, type: 2}
-  - {fileID: 11400000, guid: 11229c431a6e8414a88da5716672398a, type: 2}
   - {fileID: 11400000, guid: dc233de77b3f16e4597c72069a7bc6f2, type: 2}
   - {fileID: 11400000, guid: 7375ff2f5d0e72a4d8b72f38b46b3957, type: 2}
+  - {fileID: 11400000, guid: 11229c431a6e8414a88da5716672398a, type: 2}
+  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
   handGrid: {fileID: 11400000, guid: 57f2fd6088e0eda4892e283bb150f2e7, type: 2}
   chipsGrid: {fileID: 11400000, guid: 654c7f9ad12188d45a36ac18ca114f06, type: 2}
   downGrid: {fileID: 11400000, guid: 6d302bacf94a31f47aebe7094d7baf82, type: 2}

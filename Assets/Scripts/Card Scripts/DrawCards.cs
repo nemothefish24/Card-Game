@@ -26,6 +26,7 @@ public class DrawCards : MonoBehaviour
     {   
         
         ResourcesManager rm = Settings.GetResourcesManager();
+        currentPlayer.playerHand.Clear();
 
         if (currentPlayer.playerDeck.deckCards.Count >= 5)
         {
@@ -34,9 +35,10 @@ public class DrawCards : MonoBehaviour
                 Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
                 currentPlayer.playerDeck.deckCards.Remove(randCard);
                 currentPlayer.playerHand.Add(randCard);
-                
-                
-                //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
+                currentPlayer.refreshPile.Add(randCard);
+
+
+                    //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
             }
         }
         
@@ -52,15 +54,18 @@ public class DrawCards : MonoBehaviour
                         Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
                         currentPlayer.playerDeck.deckCards.Remove(randCard);
                         currentPlayer.playerHand.Add(randCard);
+                        currentPlayer.refreshPile.Add(randCard);
+
                     }
 
-                    int refreshCount = discardPile.Count;
+                    int refreshCount = currentPlayer.discardPile.Count;
 
                     for (int i = 0; i < refreshCount; i++)
                     {
-                        Card refreshCard = discardPile[0];
-                        discardPile.Remove(refreshCard);
+                        Card refreshCard = currentPlayer.discardPile[0];
+                        currentPlayer.discardPile.Remove(refreshCard);
                         currentPlayer.playerDeck.deckCards.Add(refreshCard);
+              
                     }
 
                     for (int i = 0; i< remainingCards; i++)
@@ -68,6 +73,7 @@ public class DrawCards : MonoBehaviour
                         Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
                         currentPlayer.playerDeck.deckCards.Remove(randCard);
                         currentPlayer.playerHand.Add(randCard);
+                        currentPlayer.refreshPile.Add(randCard);
                     }
                 }
 
@@ -76,6 +82,7 @@ public class DrawCards : MonoBehaviour
                 for (int i = 0; i < discardPile.Count; i++)
                 {
                     currentPlayer.playerDeck.deckCards.Add(discardPile[i]);
+                        currentPlayer.discardPile.Remove(discardPile[i]);
                 }
 
                 for (int i = 0; i < 5; i++)
@@ -83,13 +90,20 @@ public class DrawCards : MonoBehaviour
                 Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
                 currentPlayer.playerDeck.deckCards.Remove(randCard);
                 currentPlayer.playerHand.Add(randCard);
-                
+                currentPlayer.refreshPile.Add(randCard);
                 }
             }
 
             }
+            int refreshint = currentPlayer.refreshPile.Count;
+            for (int i = 0; i < refreshint; i++)
+            {
+                Card refreshCard = currentPlayer.refreshPile[0];
+                currentPlayer.discardPile.Add(refreshCard);
+                currentPlayer.refreshPile.Remove(refreshCard);
+            }
 
-        playerHandtoString();
+            playerHandtoString();
 
         for (int i = 0; i < playerHandStrings.Length; i++) //instantiates the cards
             

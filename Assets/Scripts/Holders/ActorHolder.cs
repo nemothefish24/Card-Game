@@ -21,6 +21,10 @@ public class ActorHolder : ScriptableObject
     List <Card> startingCardObjects = new List<Card>();
 
     public List <Card> playerHand = new List <Card>();
+
+    public List <Card> discardPile = new List <Card>();
+
+    public List <Card> refreshPile = new List <Card> ();
   
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
@@ -66,6 +70,9 @@ public class ActorHolder : ScriptableObject
     {   
         playerDeck.startingDeck.Clear();
         playerDeck.deckCards.Clear();
+        playerHand.Clear();
+        refreshPile.Clear();
+        discardPile.Clear();
 
         for (int i = 0; i < playerDeck.chosenDeck.Count; i++)
         {   
@@ -90,13 +97,22 @@ public class ActorHolder : ScriptableObject
                 Card randCard = playerDeck.deckCards[Random.Range(0, playerDeck.deckCards.Count)];
                 playerDeck.deckCards.Remove(randCard);
                 playerHand.Add(randCard);
+                refreshPile.Add(randCard);
                 
                 
                 //startingCards[i] = resources.allCards[Random.Range(0,resources.allCards.Length)];
             }
         }
+            int refreshint = refreshPile.Count;
+            for (int i = 0; i < refreshint; i++)
+            {
+                Card refreshCard = refreshPile[0];
+                discardPile.Add(refreshCard);
+                refreshPile.Remove(refreshCard);
+                
+            }
 
-        for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 startingCards[i] = playerHand[i].name;
                 
