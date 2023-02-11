@@ -19,6 +19,9 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    Unit playerUnit;
+    Unit enemyUnit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,10 @@ public class BattleSystem : MonoBehaviour
 
     void SetupBattle()
     {
-        Instantiate(playerPrefab, playerBattleStation);
-        Instantiate(enemyPrefab1, enemyBattleStation);
+        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerUnit = playerGO.GetComponent<Unit>();
+
+        GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation);
+        enemyUnit = enemyGO.GetComponent<Unit>();
     }
 }
