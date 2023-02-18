@@ -613,13 +613,7 @@ public class CardCalculator : MonoBehaviour
         }
 
     }
-    public void CalculateAll()
-    {
-        PlayerCalculateHand();
-        UpdateCardText();
-        EnemyCalculateHand();
-        CompareState();
-    }
+
     /*void PlayerCalculateHandTEST()
     {
         foreach(string card in player)

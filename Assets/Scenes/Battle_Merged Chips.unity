@@ -411,8 +411,6 @@ MonoBehaviour:
   enemyPrefab4: {fileID: 0}
   playerBattleStation: {fileID: 1192937232}
   enemyBattleStation: {fileID: 2065794409}
-  poker: {fileID: 557823491}
-  calc: {fileID: 557823490}
   playerHUD: {fileID: 0}
   enemyHUD: {fileID: 0}
   dialogueText: {fileID: 1439523185}
@@ -3448,18 +3446,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 209308268}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: StateChange
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1829175985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4176,11 +4162,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 136.71857
       objectReference: {fileID: 0}
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}

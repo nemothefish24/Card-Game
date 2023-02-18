@@ -199,7 +199,7 @@ public class PokerScript : MonoBehaviour
             for (int j = i; j < 3; j++)
         }
     }*/
-    public void Flop()
+    void Flop()
     {
         for (int i = 0; i < 3; i++)
         {
@@ -226,7 +226,7 @@ public class PokerScript : MonoBehaviour
             }
         }
     }
-    public void Turn()
+    void Turn()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -253,7 +253,7 @@ public class PokerScript : MonoBehaviour
             enemyvalues.Add(board[3].Substring(1, 1));
         }
     }
-    public void River()
+    void River()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -281,7 +281,7 @@ public class PokerScript : MonoBehaviour
         }
     }
 
-    public void NewHand()
+    void NewHand()
     {
         GameObject[] allCards = GameObject.FindGameObjectsWithTag("Poker");
         foreach (GameObject card in allCards) 
