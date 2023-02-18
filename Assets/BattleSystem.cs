@@ -19,6 +19,9 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    public PokerScript poker;
+    public CardCalculator calc;
+
     Unit playerUnit;
     Unit enemyUnit;
 
@@ -26,15 +29,75 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        SetupBattle();
+        StartCoroutine(SetupBattle());
     }
 
-    void SetupBattle()
+    IEnumerator SetupBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<Unit>();
+        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        //playerUnit = playerGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        //GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation);
+        //enemyUnit = enemyGO.GetComponent<Unit>();
+
+        Debug.Log("Battle Start");
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.PREFLOP;
+        poker.PlayCards();
+        calc.CalculateAll();
+    }
+
+    public void StateChange()
+    {
+        Debug.Log("Attempted State Change");
+
+        if (state == BattleState.PREFLOP)
+        {
+            Debug.Log("Preflop True");
+            state = BattleState.FLOP;
+            poker.Flop();
+            calc.CalculateAll();
+            return;
+        }
+
+        if (state == BattleState.FLOP)
+        {
+            Debug.Log("Flop True");
+            state = BattleState.TURN;
+            poker.Turn();
+            calc.CalculateAll();
+            return;
+        }
+
+        if (state == BattleState.TURN)
+        {
+            Debug.Log("Turn True");
+            state = BattleState.RIVER;
+            poker.River();
+            calc.CalculateAll();
+            return;
+        }
+
+        if (state == BattleState.RIVER)
+        {
+            Debug.Log("River True");
+            state = BattleState.PREFLOP;
+            poker.NewHand();
+            poker.PlayCards();
+            calc.CalculateAll();
+            return;
+        }
+
+        else return;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StateChange();
+        }
     }
 }
