@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using AK.GameStates;
 
-namespace AK.GameStates
+namespace AK
 {
 
 [CreateAssetMenu(menuName = "Actions/OnMouseClick")]
 public class OnMouseClick : Action
-{
+{    
+
     public override void Execute(float d)
     {   
         if (Input.GetMouseButtonDown(0))
-        {
+        {   
+                    
+            
+            
             List<RaycastResult> results = Settings.GetUIObjects();
         
             foreach (RaycastResult r in results)
@@ -20,15 +25,16 @@ public class OnMouseClick : Action
                 IClickable c = r.gameObject.GetComponentInParent<IClickable>();
                 
                 if (c != null)
-                {
+                    
                     c.OnClick();
                     break;
                 }
             }
+            
     }
     }
 }
-}
+
     
     
 

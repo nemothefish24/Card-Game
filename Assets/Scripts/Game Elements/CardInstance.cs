@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,19 @@ public class CardInstance : MonoBehaviour, IClickable //logic for the card inter
     {
         viz = GetComponent<CardViz>();
     }
+
+    public bool CanAttack()
+   {
+      bool result = true;
+
+      if (viz.card.cardType.typeName != "Attack")
+      {
+        result = false;
+      }
+
+
+      return result;
+   }
 
     public void OnClick()
     {

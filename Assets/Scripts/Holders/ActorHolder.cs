@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.GameElements;
@@ -9,7 +9,7 @@ namespace AK
 [CreateAssetMenu(menuName = "Holders/Actor Holder")]
 public class ActorHolder : ScriptableObject
 {   
-
+    
     public string username; 
     public string[] startingCards;  
     string[] allCardStrings;
@@ -25,10 +25,12 @@ public class ActorHolder : ScriptableObject
     public List <Card> discardPile = new List <Card>();
 
     public List <Card> refreshPile = new List <Card> ();
+
+    
   
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
-    public SO.TransformVariable downGrid;
+    public SO.TransformVariable downGrid; 
     
     public ChipsHolder chips; 
 
@@ -48,7 +50,7 @@ public class ActorHolder : ScriptableObject
 
     [System.NonSerialized]
     public List<CardInstance> handCards = new List<CardInstance>();
-    [System.NonSerialized]
+    
     public List <CardInstance> cardsDown = new List<CardInstance>();
 
     
