@@ -29,6 +29,7 @@ public class PokerScript : MonoBehaviour
     public List<string> enemysuits;
     public List<string> enemyvalues;
     public CardCalculator cardCalculator;
+    
 
 
     /*public void DrawCard()

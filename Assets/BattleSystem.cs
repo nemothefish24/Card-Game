@@ -21,6 +21,7 @@ public class BattleSystem : MonoBehaviour
 
     public PokerScript poker;
     public CardCalculator calc;
+    public BetSystem blinds;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -42,7 +43,7 @@ public class BattleSystem : MonoBehaviour
 
         Debug.Log("Battle Start");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         state = BattleState.PREFLOP;
         poker.PlayCards();
@@ -83,6 +84,10 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.RIVER)
         {
             Debug.Log("River True");
+            blinds.RiverEnd();
+
+            //add win and loss
+
             state = BattleState.PREFLOP;
             poker.NewHand();
             poker.PlayCards();
