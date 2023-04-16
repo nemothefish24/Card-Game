@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public enum BattleState { START, PREFLOP, FLOP, TURN, RIVER, WON, LOST }
@@ -22,6 +24,9 @@ public class BattleSystem : MonoBehaviour
     public PokerScript poker;
     public CardCalculator calc;
     public BetSystem blinds;
+
+    public TextMeshProUGUI dialogueText;
+
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -48,6 +53,7 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PREFLOP;
         poker.PlayCards();
         calc.CalculateAll();
+        PlayerTurn();
     }
 
     public void StateChange()
@@ -96,6 +102,10 @@ public class BattleSystem : MonoBehaviour
         }
 
         else return;
+    }
+    void PlayerTurn()
+    {
+        dialogueText.text = "Play a card and select your bet.";
     }
 
     private void Update()
