@@ -1881,6 +1881,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
+  actionManager: {fileID: 838743202}
   playerHand: []
   turnIndex: 0
   turns:
@@ -4582,7 +4583,7 @@ PrefabInstance:
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 136.71858
+      value: 136.71857
       objectReference: {fileID: 0}
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}

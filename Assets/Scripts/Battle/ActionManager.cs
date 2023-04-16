@@ -5,18 +5,8 @@ using UnityEngine;
 namespace AK{
 public class ActionManager : MonoBehaviour
 {   
-    public List <Card> playerQueuedCards = new List<Card>();
+    public List <CardInstance> playerQueuedCards = new List<CardInstance>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
 }

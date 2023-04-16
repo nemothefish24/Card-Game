@@ -44,12 +44,12 @@ public class PlayerCardsDownAreaLogic : AreaLogic
             card.value.gameObject.SetActive(true);
             card.value.currentLogic = cardDownLogic;
             Settings.gameManager.currentPlayer.cardsDown.Add(card.value);
-            Debug.Log("Card dropped");
+            //manager.playerQueuedCards.Add(card.value);
             
             
         }
 
-        Debug.Log(Settings.gameManager.currentPlayer.cardsDown[0].viz.card.properties[0].stringValue); 
+        
     }
 }
 }

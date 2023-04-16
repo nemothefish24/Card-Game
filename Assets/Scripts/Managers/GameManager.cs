@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public State currentState;
     public GameObject cardPrefab;
 
+    public ActionManager actionManager;
+
     public List <Card> playerHand = new List <Card>(); 
     
     public int turnIndex;
@@ -29,12 +31,17 @@ public class GameManager : MonoBehaviour
 
         currentPlayer.isHumanPlayer = true;
         currentPlayer.currentHolder = playerHolder;
+        currentPlayer.cardsDown.Clear();
+        currentPlayer.handCards.Clear();
+        actionManager.playerQueuedCards.Clear();
 
         SetUpPlayers();
 
         CreateStartingCards();
         turnText.value = turns[turnIndex].player.username;
         onTurnChanged.Raise();
+
+        
     }
 
     void SetUpPlayers()
@@ -84,7 +91,14 @@ public class GameManager : MonoBehaviour
 
         if (currentState != null)
             currentState.Tick(Time.deltaTime);
+
+       
+    
+        
+            
+            
     }
+    
 
     public void SetState(State state) //control the state you want to go in 
     {

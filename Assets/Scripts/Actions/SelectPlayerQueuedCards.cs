@@ -20,10 +20,12 @@ public class SelectPlayerQueuedCards : Action
             {   
                 CardInstance cardInst = r.gameObject.GetComponentInParent<CardInstance>();
 
+                
                 if (Settings.gameManager.currentPlayer.cardsDown.Contains(cardInst))
-                {   manager.playerQueuedCards.Add(cardInst.viz.card);
+                {   manager.playerQueuedCards.Add(cardInst);
                     return;
                 }
+                
             }
    }
 }

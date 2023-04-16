@@ -51,23 +51,8 @@ public class ActorHolder : ScriptableObject
     [System.NonSerialized]
     public List<CardInstance> handCards = new List<CardInstance>();
     
-    public List <CardInstance> cardsDown = new List<CardInstance>();
-
-    
-    // Start is called before the first frame update
-
-    /*
-    void Start()
-    {
-        for (int i = 0; i<resources.allCards.Length; i++)
-        {
-            playerDeck.Add(resources.allCards[i]); //temporary, will change what cards are initially added to playerDeck
-
-            
-        }
-
-    }
-    */
+    public List <CardInstance> cardsDown = new List<CardInstance>();  
+      
     public string[] pickStartingCards()
     {   
         playerDeck.startingDeck.Clear();
