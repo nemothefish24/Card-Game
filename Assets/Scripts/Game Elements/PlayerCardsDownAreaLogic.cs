@@ -12,6 +12,10 @@ public class PlayerCardsDownAreaLogic : AreaLogic
     public CardType attackType;
     public CardType utilityType; 
     
+    
+
+    ActionManager manager;
+    
     public SO.TransformVariable areaGrid;
     
     public GameElements.GE_Logic cardDownLogic;
@@ -21,6 +25,7 @@ public class PlayerCardsDownAreaLogic : AreaLogic
         if (card.value == null)
             return;
         
+        /*
         if (card.value.viz.card.cardType == attackType) //checks if the card is of a certain type
         { //Places card down
             Settings.DropAttackCard(card.value.transform, areaGrid.value.transform);
@@ -28,15 +33,23 @@ public class PlayerCardsDownAreaLogic : AreaLogic
             card.value.gameObject.SetActive(true);
             card.value.currentLogic = cardDownLogic;
         }
+        */
 
         else
-        if (card.value.viz.card.cardType == utilityType) //checks if the card is of a certain type
+        if (card.value.viz.card.cardType != null) //checks if the card is of a certain type
         { //Places card down
+            
             Settings.SetParentForCard(card.value.transform, areaGrid.value.transform);
             
             card.value.gameObject.SetActive(true);
             card.value.currentLogic = cardDownLogic;
-        } 
+            Settings.gameManager.currentPlayer.cardsDown.Add(card.value);
+            //manager.playerQueuedCards.Add(card.value);
+            
+            
+        }
+
+        
     }
 }
 }

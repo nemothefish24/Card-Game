@@ -8,6 +8,8 @@ namespace AK{
 public abstract class CardType : ScriptableObject
 {  
    public string typeName; 
+   public bool canAttack;
+   //public typelogic logic
 
    public virtual void OnSetType(CardViz viz)
    {
@@ -16,6 +18,17 @@ public abstract class CardType : ScriptableObject
       CardVizProperties type = viz.GetProperty(t);
       type.text.text = typeName; 
    }
+
+   public bool TypeAllowsForAttack(CardInstance cardInst)
+   {
+      if (canAttack)
+         return true;
+
+      else 
+         return false;
+   }
+
+   
   
 }
 

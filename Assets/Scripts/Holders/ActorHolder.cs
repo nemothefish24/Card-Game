@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.GameElements;
@@ -9,7 +9,7 @@ namespace AK
 [CreateAssetMenu(menuName = "Holders/Actor Holder")]
 public class ActorHolder : ScriptableObject
 {   
-
+    
     public string username; 
     public string[] startingCards;  
     string[] allCardStrings;
@@ -25,10 +25,12 @@ public class ActorHolder : ScriptableObject
     public List <Card> discardPile = new List <Card>();
 
     public List <Card> refreshPile = new List <Card> ();
+
+    
   
     public SO.TransformVariable handGrid;
     public SO.TransformVariable chipsGrid;
-    public SO.TransformVariable downGrid;
+    public SO.TransformVariable downGrid; 
     
     public ChipsHolder chips; 
 
@@ -48,24 +50,9 @@ public class ActorHolder : ScriptableObject
 
     [System.NonSerialized]
     public List<CardInstance> handCards = new List<CardInstance>();
-    [System.NonSerialized]
-    public List <CardInstance> cardsDown = new List<CardInstance>();
-
     
-    // Start is called before the first frame update
-
-    /*
-    void Start()
-    {
-        for (int i = 0; i<resources.allCards.Length; i++)
-        {
-            playerDeck.Add(resources.allCards[i]); //temporary, will change what cards are initially added to playerDeck
-
-            
-        }
-
-    }
-    */
+    public List <CardInstance> cardsDown = new List<CardInstance>();  
+      
     public string[] pickStartingCards()
     {   
         playerDeck.startingDeck.Clear();
