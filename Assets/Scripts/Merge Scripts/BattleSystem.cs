@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
+namespace AK{
 public enum BattleState { START, PREFLOP, FLOP, TURN, RIVER, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
@@ -57,4 +57,5 @@ public class BattleSystem : MonoBehaviour
     {
         dialogueText.text = "Play a card and select your bet.";
     }
+}
 }

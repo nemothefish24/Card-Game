@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace AK{
 public class Unit : MonoBehaviour
 {
    public string unitName;
@@ -11,4 +12,5 @@ public class Unit : MonoBehaviour
 
    public int maxHP;
     public int currentHP;
+}
 }

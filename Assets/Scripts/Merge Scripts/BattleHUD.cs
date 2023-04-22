@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+namespace AK{
 public class BattleHUD : MonoBehaviour
 {
     public Slider hpSlider;
@@ -20,4 +20,5 @@ public class BattleHUD : MonoBehaviour
     {
         hpSlider.value = hp;
     }
+}
 }

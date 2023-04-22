@@ -1620,6 +1620,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
+  actionManager: {fileID: 0}
   playerHand: []
   turnIndex: 0
   turns:
