@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209308269}
-  - component: {fileID: 209308268}
+  - component: {fileID: 209308270}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -389,32 +389,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &209308268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209308267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2582eddc5b07354e97a7323849614b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  playerPrefab: {fileID: 792293549140030704, guid: fe6773552b435e642a6e215c458369a2,
-    type: 3}
-  enemyPrefab1: {fileID: 5416319981688452492, guid: 5ceacf763327b6041968cf7742512871,
-    type: 3}
-  enemyPrefab2: {fileID: 0}
-  enemyPrefab3: {fileID: 0}
-  enemyPrefab4: {fileID: 0}
-  playerBattleStation: {fileID: 1192937232}
-  enemyBattleStation: {fileID: 2065794409}
-  playerHUD: {fileID: 0}
-  enemyHUD: {fileID: 0}
-  dialogueText: {fileID: 1439523185}
-  blinds: {fileID: 2011014574}
 --- !u!4 &209308269
 Transform:
   m_ObjectHideFlags: 0
@@ -430,6 +404,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209308270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209308267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dd61cbbaadc7046bb1518624a2d0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  playerPrefab: {fileID: 792293549140030704, guid: fe6773552b435e642a6e215c458369a2,
+    type: 3}
+  enemyPrefab1: {fileID: 5416319981688452492, guid: 5ceacf763327b6041968cf7742512871,
+    type: 3}
+  enemyPrefab2: {fileID: 0}
+  enemyPrefab3: {fileID: 0}
+  enemyPrefab4: {fileID: 0}
+  playerBattleStation: {fileID: 1192937232}
+  enemyBattleStation: {fileID: 2065794409}
+  poker: {fileID: 557823491}
+  calc: {fileID: 557823490}
+  blinds: {fileID: 2011014574}
 --- !u!1 &238514840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,6 +1620,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
+  actionManager: {fileID: 0}
   playerHand: []
   turnIndex: 0
   turns:
@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chips: {fileID: 0}
-  battleSystem: {fileID: 209308268}
+  battleSystem: {fileID: 0}
   startingChips: 100
   chipStack: 0
   currentChips: 0
@@ -3759,7 +3759,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065794408
 GameObject:
