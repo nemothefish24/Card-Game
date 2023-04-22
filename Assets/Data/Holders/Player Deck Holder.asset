@@ -20,4 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc233de77b3f16e4597c72069a7bc6f2, type: 2}
   - {fileID: 11400000, guid: b9316aa654cdb9145bf1f84f3fba7fab, type: 2}
   startingDeck: []
-  deckCards: []
+  deckCards:
+  - {fileID: 11400000, guid: 847944f770b5ddb43a7c11abdf51bcf7, type: 2}
+  - {fileID: 11400000, guid: 11229c431a6e8414a88da5716672398a, type: 2}
+  - {fileID: 11400000, guid: 7375ff2f5d0e72a4d8b72f38b46b3957, type: 2}
+  - {fileID: 11400000, guid: 6ece02f76abea5c4bb38b334136617e3, type: 2}
+  - {fileID: 11400000, guid: dc233de77b3f16e4597c72069a7bc6f2, type: 2}
+  - {fileID: 11400000, guid: b9316aa654cdb9145bf1f84f3fba7fab, type: 2}
