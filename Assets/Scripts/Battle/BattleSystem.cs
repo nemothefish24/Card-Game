@@ -35,11 +35,11 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        //playerUnit = playerGO.GetComponent<Unit>();
+        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerUnit = playerGO.GetComponent<Unit>();
 
-        //GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation);
-        //enemyUnit = enemyGO.GetComponent<Unit>();
+        GameObject enemyGO = Instantiate(enemyPrefab1, enemyBattleStation);
+        enemyUnit = enemyGO.GetComponent<Unit>();
 
         Debug.Log("Battle Start");
 
@@ -87,6 +87,7 @@ public class BattleSystem : MonoBehaviour
             blinds.RiverEnd();
 
             //add win and loss
+            //Add in execution of card effect
 
             state = BattleState.PREFLOP;
             poker.NewHand();

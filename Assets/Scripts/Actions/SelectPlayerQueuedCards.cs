@@ -19,6 +19,7 @@ public class SelectPlayerQueuedCards : Action
             foreach (RaycastResult r in results)
             {   
                 CardInstance cardInst = r.gameObject.GetComponentInParent<CardInstance>();
+                ActorHolder a = Settings.gameManager.currentPlayer;
 
                 
                 if (Settings.gameManager.currentPlayer.cardsDown.Contains(cardInst))

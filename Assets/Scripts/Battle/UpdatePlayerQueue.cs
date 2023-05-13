@@ -10,9 +10,10 @@ public class UpdatePlayerQueue : MonoBehaviour
 
     public ActorHolder actor;
 
-    public void UpdatePlayerQueuedCards() 
+    public List<CardInstance> UpdatePlayerQueuedCards() 
     {
         playerQueuedCards = actor.cardsDown;
+        return playerQueuedCards;
     }
 }
 }

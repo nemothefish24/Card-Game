@@ -10,7 +10,7 @@ public class PlayerCardDown : GE_Logic
    
     public override void OnClick(CardInstance inst)
     {
-        Debug.Log("This card is in my hand but on the table");
+        
     }
 
     public override void OnHighlight(CardInstance inst)

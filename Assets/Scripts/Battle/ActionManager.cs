@@ -6,10 +6,12 @@ namespace AK
 {
 public class ActionManager : MonoBehaviour
 {   
-    public List <CardInstance> playerQueuedCards = new List<CardInstance>();
+    public List<CardInstance> playerQueuedCards;
 
     ActorHolder actor;
 
+
+    
     
 }
 }
