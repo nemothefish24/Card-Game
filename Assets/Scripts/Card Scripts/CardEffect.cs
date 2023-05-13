@@ -4,11 +4,17 @@ using UnityEngine;
 
 namespace AK
 {
-public abstract class CardEffect
+
+[CreateAssetMenu(fileName = "Card Effect", menuName = "Card Effect")]
+public class CardEffect : ScriptableObject
 {   
     public CardInstance CardInst;
     public Unit playerUnit;
     public Unit enemyUnit;
+
+    public EffectActionData cardEffectActionData;
+    public EffectAction effectAction;
+    public DamageAction damageAction;
 
     public CardEffect(CardInstance cardInst)
     {
@@ -16,9 +22,19 @@ public abstract class CardEffect
     }
     
 
-    public virtual void ActivateCardEffect()
+    public void CheckConditions()
     {
+        switch (cardEffectActionData.type)
+        {
+            case EffectDataType.damage:
+                damageAction.ApplyEffectAction(cardEffectActionData);
+                break;
 
+            case EffectDataType.heal:
+                break;
+            case EffectDataType.buff:
+                break;
+        }
     }
 }
 }

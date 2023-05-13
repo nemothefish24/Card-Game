@@ -9,11 +9,12 @@ public class Card : ScriptableObject
     public CardType cardType;
     public CardProperties[] properties;
 
-    [SerializeReference]
     public CardEffect effect;
+
+    public ActionManager actionManager;
     
     
-    
+   
     
 }
 }

@@ -10,6 +10,8 @@ public class ActionManager : MonoBehaviour
 
     ActorHolder actor;
 
+    Card cardToExecute;
+
 
     
     

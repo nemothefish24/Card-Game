@@ -16,11 +16,6 @@ public class DonkEffect : CardEffect
     }
 
 
-    public override void ActivateCardEffect()
-    {
-        base.ActivateCardEffect();
-        enemyUnit.currentHP -= Damage;
-
-    }
+    
 }
 }
