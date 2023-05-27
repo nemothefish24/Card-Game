@@ -8,7 +8,7 @@ public abstract class BuffAction : EffectAction
 {
     public override void ApplyEffectAction(EffectActionData data)
     {
-        playerUnit.currentHP += data.effectValue;
+        playerUnit.damage += data.effectValue;
     }
 }
 }
