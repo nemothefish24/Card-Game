@@ -3423,7 +3423,6 @@ MonoBehaviour:
     type: 3}
   discardPile: []
   PlayerArea: {fileID: 1152167262}
-  EnemyArea: {fileID: 0}
 --- !u!114 &1829175984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,7 +3815,11 @@ MonoBehaviour:
   betAmount: 10
   rewardAmount: 0
   endingChips: 0
+  betIncrement: 0
   cardCalculator: {fileID: 557823490}
+  betAmountText: 
+  currentChipsText: 
+  chipStackText: 
 --- !u!4 &2011014575
 Transform:
   m_ObjectHideFlags: 0
@@ -4291,7 +4294,7 @@ PrefabInstance:
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 136.71855
+      value: 136.71857
       objectReference: {fileID: 0}
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}

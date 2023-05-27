@@ -17,7 +17,7 @@ public class DrawCards : MonoBehaviour
     string[] playerHandStrings;
 
     public GameObject PlayerArea;
-    public GameObject EnemyArea; 
+    
 
 
     
