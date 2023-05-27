@@ -9,6 +9,10 @@ public class Unit : MonoBehaviour
 
    public int damage;
 
+    
+
+   public int currentShield;
+
    public int maxHP;
     public int currentHP;
 }
