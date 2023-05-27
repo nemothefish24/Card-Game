@@ -15,6 +15,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject enemyPrefab2;
     public GameObject enemyPrefab3; 
     public GameObject enemyPrefab4;
+    public int multiplier;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -22,6 +23,7 @@ public class BattleSystem : MonoBehaviour
     public PokerScript poker;
     public CardCalculator calc;
     public BetSystem blinds;
+    public BattleMultiplier mult;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -60,6 +62,7 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.FLOP;
             poker.Flop();
             calc.CalculateAll();
+            blinds.BetChips();
             return;
         }
 
@@ -69,6 +72,7 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.TURN;
             poker.Turn();
             calc.CalculateAll();
+            blinds.BetChips();
             return;
         }
 
@@ -78,20 +82,38 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.RIVER;
             poker.River();
             calc.CalculateAll();
+            blinds.BetChips();
             return;
         }
 
         if (state == BattleState.RIVER)
         {
             Debug.Log("River True");
-            blinds.RiverEnd();
-
+            calc.CalculateAll();
+            //multiplier script works but doesnt transfer to battlesystem?
+            if (calc.winner == CardCalculator.Winner.Player)
+            {
+                Debug.Log("multiplier recognized player winner");
+                multiplier = mult.multiplier;
+            }
+            else if (calc.winner == CardCalculator.Winner.Chop)
+            {
+                Debug.Log("multiplier recognized chop");
+                multiplier = 1;
+            }
+            else
+            {
+                Debug.Log("multiplier recognized enemy winner");
+                multiplier = 8 / 10;
+            }
             //add win and loss
+            blinds.RiverEnd();
+            
 
             state = BattleState.PREFLOP;
             poker.NewHand();
             poker.PlayCards();
-            calc.CalculateAll();
+            
             return;
         }
 

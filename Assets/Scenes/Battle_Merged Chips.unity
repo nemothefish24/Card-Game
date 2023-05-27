@@ -382,6 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 209308269}
   - component: {fileID: 209308270}
+  - component: {fileID: 209308271}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -424,11 +425,27 @@ MonoBehaviour:
   enemyPrefab2: {fileID: 0}
   enemyPrefab3: {fileID: 0}
   enemyPrefab4: {fileID: 0}
+  multiplier: 0
   playerBattleStation: {fileID: 1192937232}
   enemyBattleStation: {fileID: 2065794409}
   poker: {fileID: 557823491}
   calc: {fileID: 557823490}
   blinds: {fileID: 2011014574}
+  mult: {fileID: 209308271}
+--- !u!114 &209308271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209308267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47c6200ec9166e4d973cffeb6336326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calc: {fileID: 557823490}
+  multiplier: 0
 --- !u!1 &238514840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poker: {fileID: 557823491}
+  mult: {fileID: 209308271}
   player: []
   enemy: []
   playerHandvalues: 
@@ -1593,6 +1611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754791534}
   - component: {fileID: 754791533}
+  - component: {fileID: 754791535}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1620,7 +1639,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
-  actionManager: {fileID: 0}
+  actionManager: {fileID: 754791535}
   playerHand: []
   turnIndex: 0
   turns:
@@ -1644,6 +1663,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754791535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754791532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3b4c084fb4b3e4bbbb05310661f9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerQueuedCards: []
 --- !u!1 &869845030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,6 +3470,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1829175983}
         m_TargetAssemblyTypeName: AK.DrawCards, Assembly-CSharp
         m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 209308270}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: StateChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
