@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public State currentState;
     public GameObject cardPrefab;
 
-    public ActionManager actionManager;
+    ActionManager actionManager;
 
     public List <Card> playerHand = new List <Card>(); 
     
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public SO.GameEvent onPhaseChanged; 
     public SO.StringVariable turnText;
 
-    private void Start()
+    public void Start()
     {
         Settings.gameManager = this; 
 

@@ -19,20 +19,13 @@ public class DrawCards : MonoBehaviour
     string[] playerHandStrings;
 
     public GameObject PlayerArea;
-<<<<<<< Updated upstream
-    public GameObject EnemyArea; 
-
-
-    
-=======
-      
->>>>>>> Stashed changes
 
     public void DrawPlayerHand() //randomly draws cards
     {   
         
         ResourcesManager rm = Settings.GetResourcesManager();
         currentPlayer.playerHand.Clear();
+        
         foreach (Transform child in currentPlayer.handGrid.value)
             {
                 GameObject.Destroy(child.gameObject);

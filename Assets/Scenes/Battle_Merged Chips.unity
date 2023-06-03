@@ -1617,10 +1617,9 @@ MonoBehaviour:
   currentPlayer: {fileID: 11400000, guid: b0d8ad66fce2d7041892d05c79ab61ba, type: 2}
   playerHolder: {fileID: 11400000, guid: 784c11ebea33c2a42b976888f55f8730, type: 2}
   enemyHolder: {fileID: 11400000, guid: adb1a91524e64624294effaa51b68ef4, type: 2}
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: f007bcf187465ea49a8e98525a47c4b1, type: 2}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
-  actionManager: {fileID: 0}
   playerHand: []
   turnIndex: 0
   turns:
@@ -3391,7 +3390,6 @@ MonoBehaviour:
     type: 3}
   discardPile: []
   PlayerArea: {fileID: 1152167262}
-  EnemyArea: {fileID: 0}
 --- !u!114 &1829175984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,7 +4245,7 @@ PrefabInstance:
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 136.71855
+      value: 136.71857
       objectReference: {fileID: 0}
     - target: {fileID: 42137481339800696, guid: dba4a35102a63c644add9e3717b8586c,
         type: 3}
