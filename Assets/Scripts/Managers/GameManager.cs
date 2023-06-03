@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public State currentState;
     public GameObject cardPrefab;
 
-    ActionManager actionManager;
+    public ActionManager actionManager;
 
     public List <Card> playerHand = new List <Card>(); 
     

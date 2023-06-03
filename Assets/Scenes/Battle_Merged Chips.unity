@@ -1620,6 +1620,7 @@ MonoBehaviour:
   currentState: {fileID: 11400000, guid: f007bcf187465ea49a8e98525a47c4b1, type: 2}
   cardPrefab: {fileID: 6152091439881633833, guid: fcf136fed52f78a49ba00f10f0c30f44,
     type: 3}
+  actionManager: {fileID: 1079448864}
   playerHand: []
   turnIndex: 0
   turns:
@@ -2015,6 +2016,51 @@ MonoBehaviour:
   raiseOnEnable: 0
   targetString: {fileID: 11400000, guid: 8917da7484a58864aa9f3af08e639027, type: 2}
   targetText: {fileID: 1058275934}
+--- !u!1 &1079448863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079448865}
+  - component: {fileID: 1079448864}
+  m_Layer: 0
+  m_Name: ActionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1079448864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079448863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3b4c084fb4b3e4bbbb05310661f9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerQueuedCards: []
+--- !u!4 &1079448865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079448863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.027780175, y: 0.05922093, z: 2.5489373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1140654082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +2626,52 @@ MonoBehaviour:
   m_Spacing: {x: 25, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
+--- !u!1 &1302535417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302535419}
+  - component: {fileID: 1302535418}
+  m_Layer: 0
+  m_Name: UpdatePlayerQueue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1302535418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302535417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ad3961381460e4eaa3ff1e390bfb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerQueuedCards: []
+  actor: {fileID: 11400000, guid: b0d8ad66fce2d7041892d05c79ab61ba, type: 2}
+--- !u!4 &1302535419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302535417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.067822635, y: 0.019017963, z: 2.5069613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372036685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3406,6 @@ GameObject:
   - component: {fileID: 1829175984}
   - component: {fileID: 1829175983}
   - component: {fileID: 1829175982}
-  - component: {fileID: 1829175986}
   m_Layer: 5
   m_Name: End Turn
   m_TagString: Untagged
@@ -3436,7 +3527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1829175983}
         m_TargetAssemblyTypeName: AK.DrawCards, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: DrawPlayerHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3446,7 +3537,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1829175986}
+      - m_Target: {fileID: 1302535418}
         m_TargetAssemblyTypeName: AK.UpdatePlayerQueue, Assembly-CSharp
         m_MethodName: UpdatePlayerQueuedCards
         m_Mode: 1
@@ -3466,20 +3557,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829175980}
   m_CullTransparentMesh: 0
---- !u!114 &1829175986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829175980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ad3961381460e4eaa3ff1e390bfb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerQueuedCards: []
-  actor: {fileID: 11400000, guid: b0d8ad66fce2d7041892d05c79ab61ba, type: 2}
 --- !u!1 &1863054456
 GameObject:
   m_ObjectHideFlags: 0

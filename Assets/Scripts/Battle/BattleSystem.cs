@@ -30,7 +30,7 @@ public class BattleSystem : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        StartCoroutine(SetupBattle());
+        Coroutine coroutine = StartCoroutine(SetupBattle());
     }
 
     IEnumerator SetupBattle()
