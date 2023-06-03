@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System.Text.RegularExpressions;
+using System.ComponentModel;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,16 +19,25 @@ public class DrawCards : MonoBehaviour
     string[] playerHandStrings;
 
     public GameObject PlayerArea;
+<<<<<<< Updated upstream
     public GameObject EnemyArea; 
 
 
     
+=======
+      
+>>>>>>> Stashed changes
 
     public void DrawPlayerHand() //randomly draws cards
     {   
         
         ResourcesManager rm = Settings.GetResourcesManager();
         currentPlayer.playerHand.Clear();
+        foreach (Transform child in currentPlayer.handGrid.value)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        
 
         if (currentPlayer.playerDeck.deckCards.Count >= 5)
         {
@@ -85,7 +96,7 @@ public class DrawCards : MonoBehaviour
                         currentPlayer.discardPile.Remove(discardPile[i]);
                 }
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 2; i++)
                 {
                 Card randCard = currentPlayer.playerDeck.deckCards[Random.Range(0, currentPlayer.playerDeck.deckCards.Count)];
                 currentPlayer.playerDeck.deckCards.Remove(randCard);
