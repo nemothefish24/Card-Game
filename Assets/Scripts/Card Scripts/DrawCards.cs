@@ -25,7 +25,7 @@ public class DrawCards : MonoBehaviour
         
         ResourcesManager rm = Settings.GetResourcesManager();
         currentPlayer.playerHand.Clear();
-        
+
         foreach (Transform child in currentPlayer.handGrid.value)
             {
                 GameObject.Destroy(child.gameObject);

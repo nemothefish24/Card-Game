@@ -7,6 +7,7 @@ using UnityEngine;
 public class CardCalculator : MonoBehaviour
 {
     public PokerScript poker;
+    public BattleMultiplier mult;
     public List<string> player;
     public List<string> enemy;
     public List<int> playerHandvalues;
@@ -619,6 +620,7 @@ public class CardCalculator : MonoBehaviour
         UpdateCardText();
         EnemyCalculateHand();
         CompareState();
+        mult.calculateMultiplier();
     }
     /*void PlayerCalculateHandTEST()
     {
