@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK;
 
 
 public enum BattleState { START, PREFLOP, FLOP, TURN, RIVER, WON, LOST }
@@ -24,6 +25,8 @@ public class BattleSystem : MonoBehaviour
     public CardCalculator calc;
     public BetSystem blinds;
     public BattleMultiplier mult;
+
+    EffectAction effectAction;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -109,6 +112,7 @@ public class BattleSystem : MonoBehaviour
             //add win and loss
             blinds.RiverEnd();
             
+            //PUT CODE FOR CARD EFFECT EXECUTION HERE
 
             state = BattleState.PREFLOP;
             poker.NewHand();
