@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af04f380a1b2b0541baa6b75944eb717, type: 3}
   m_Name: Donk Effect
   m_EditorClassIdentifier: 
-  CardInst: {fileID: 0}
-  playerUnit: {fileID: 0}
-  enemyUnit: {fileID: 0}
   cardEffectActionData:
     type: 1
-    damage: 1
+    effectValue: 1
     name: Donk

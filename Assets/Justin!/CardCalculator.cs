@@ -620,7 +620,7 @@ public class CardCalculator : MonoBehaviour
         UpdateCardText();
         EnemyCalculateHand();
         CompareState();
-        mult.calculateMultiplier();
+        //mult.calculateMultiplier();
     }
     /*void PlayerCalculateHandTEST()
     {

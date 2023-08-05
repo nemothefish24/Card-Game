@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Battle_Merged Chips.unity
+    guid: 7c290a0873d811e4a8665f12ecab224c
   m_configObjects: {}

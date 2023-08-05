@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 namespace AK{
-public abstract class BuffAction : EffectAction
+public class BuffAction : EffectAction
 {
     public override void ApplyEffectAction(EffectActionData data)
     {

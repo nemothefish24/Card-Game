@@ -7,6 +7,8 @@ namespace AK
 public class DonkEffect : CardEffect
 {   
     public int Damage;
+
+    
     
 
     public DonkEffect(CardInstance cardInst) : base(cardInst)
