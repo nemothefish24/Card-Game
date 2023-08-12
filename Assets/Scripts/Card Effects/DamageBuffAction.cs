@@ -4,20 +4,21 @@ using UnityEngine;
 
 
 namespace AK{
-public class DefendAction : EffectAction
+public class DamageBuffAction : EffectAction
 {   
     GameObject battleSystemScript;
 
     Unit affectedPlayerUnit;
 
-    public DefendAction()
+    public DamageBuffAction()
     {
         battleSystemScript = GameObject.Find("BattleSystem");
         affectedPlayerUnit = battleSystemScript.GetComponent<BattleSystem>().playerUnit;
     }
+
     public override void ApplyEffectAction(EffectActionData data)
     {
-        affectedPlayerUnit.currentShield += data.effectValue;
+        affectedPlayerUnit.damage += data.effectValue;
     }
 }
 }

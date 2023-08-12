@@ -9,6 +9,6 @@ public enum EffectDataType
     heal,
     damage,
     defend,
-    buff,
+    damagebuff,
 }
 }

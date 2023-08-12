@@ -131,6 +131,7 @@ public class BattleSystem : MonoBehaviour
             state = BattleState.PREFLOP;
             poker.NewHand();
             poker.PlayCards();
+            playerUnit.damage = 1;
             
             
             return;

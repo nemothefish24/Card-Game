@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cbc31786dd6b734fa5af858721d7f9b, type: 3}
-  m_Name: Needle
+  m_Name: Shades
   m_EditorClassIdentifier: 
   cardType: {fileID: 11400000, guid: 029864d97bb9389499655dd2523a7f6f, type: 2}
   properties:
-  - stringValue: Needle
+  - stringValue: Shades
     intValue: 0
     sprite: {fileID: 0}
     element: {fileID: 11400000, guid: 071247f8109970c4f8b156b85083aa0a, type: 2}
-  - stringValue: He's trash and you're going to let him know he is
+  - stringValue: Become inscrutable. +1 to shield
     intValue: 0
     sprite: {fileID: 21300000, guid: c7bf45f0ef95bed4491c5809fc6bf484, type: 3}
     element: {fileID: 11400000, guid: 3fd3410e9828e8d4cb04c6efe5167cf6, type: 2}
@@ -34,3 +34,5 @@ MonoBehaviour:
     intValue: 1
     sprite: {fileID: 0}
     element: {fileID: 11400000, guid: f2bc9050fe5013c4bbc1b1218440a549, type: 2}
+  effect: {fileID: 11400000, guid: 6723b3f17f5df8048aa6f3226fcbc945, type: 2}
+  actionManager: {fileID: 0}

@@ -42,11 +42,21 @@ public class CardEffect : ScriptableObject
                 damageAction.ApplyEffectAction(cardEffectActionData);
                 break;
 
-            case EffectDataType.heal:
+            case EffectDataType.defend:
+                DefendAction defendAction = new DefendAction();
+                defendAction.playerUnit = playerUnit;
+                defendAction.ApplyEffectAction(cardEffectActionData);
                 break;
-            case EffectDataType.buff:
-                BuffAction buffAction = new BuffAction();
-                buffAction.playerUnit = playerUnit;
+
+            case EffectDataType.heal:
+                HealAction healAction = new HealAction();
+                healAction.playerUnit = playerUnit;
+                healAction.ApplyEffectAction(cardEffectActionData);
+                break;
+            case EffectDataType.damagebuff:
+                DamageBuffAction damageBuffAction = new DamageBuffAction();
+                damageBuffAction.playerUnit = playerUnit;
+                damageBuffAction.ApplyEffectAction(cardEffectActionData);
                 break;
         }
     }
