@@ -34,6 +34,8 @@ public class BattleSystem : MonoBehaviour
     public Unit playerUnit;
     public Unit enemyUnit;
 
+    public ActionQueue actionQueue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,16 +118,21 @@ public class BattleSystem : MonoBehaviour
             Debug.Log("River end");
             blinds.RiverEnd();
             
+
+            actionQueue.ActionExecution();
+
+
             //PUT CODE FOR CARD EFFECT EXECUTION HERE
 
-            for (int i = 0; i < playerQueue.playerQueuedCards.Count; i++)
+            
+            /*for (int i = 0; i < playerQueue.playerQueuedCards.Count; i++)
             {
 
             Debug.Log("Conditions about to be checked");            
             playerQueue.playerQueuedCards[i].viz.card.effect.CheckConditions();
 
             }
-
+            */
             
 
             state = BattleState.PREFLOP;

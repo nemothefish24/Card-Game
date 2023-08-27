@@ -10,15 +10,19 @@ public class DamageBuffAction : EffectAction
 
     Unit affectedPlayerUnit;
 
-    public DamageBuffAction()
+    CardInstance affectedCard;
+
+    public UpdatePlayerQueue playerQueue;
+
+    public DamageBuffAction(CardInstance cardPassed)
     {
         battleSystemScript = GameObject.Find("BattleSystem");
-        affectedPlayerUnit = battleSystemScript.GetComponent<BattleSystem>().playerUnit;
+        affectedCard = cardPassed;
     }
 
     public override void ApplyEffectAction(EffectActionData data)
     {
-        affectedPlayerUnit.damage += data.effectValue;
+        affectedCard.viz.card.effect.cardEffectActionData.effectValue += data.effectValue;
     }
 }
 }
