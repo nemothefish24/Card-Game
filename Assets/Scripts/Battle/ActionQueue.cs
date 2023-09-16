@@ -29,7 +29,37 @@ public class ActionQueue : MonoBehaviour
             {
                 CheckConditions(playerQueue.playerQueuedCards[0]);
                 playerQueue.playerQueuedCards[0] = null;
-                
+
+
+                foreach (CardInstance cardToQueue in playerQueue.playerQueuedCards)
+                    {   
+                        if (cardToQueue.viz.card.effect.cardEffectActionData.type.ToString() == "damagebuff")
+                            {
+                                temporaryPlayerQueue.Add(cardToQueue);
+
+                    
+                            }
+
+                        if (cardToQueue.viz.card.effect.cardEffectActionData.type.ToString() == "damage")
+                            {
+                            cardToBuff = cardToQueue;
+
+                            Debug.Log(cardToBuff.viz.card.effect.cardEffectActionData.name + " has become the buffed action card and had a damage value of " + cardToBuff.viz.card.effect.cardEffectActionData.effectValue);
+                            
+                            foreach (CardInstance damageBuffCard in temporaryPlayerQueue)
+                                {   
+                                    CheckConditions(damageBuffCard);
+                                    Debug.Log(damageBuffCard.viz.card.effect.cardEffectActionData.name + " has been added as a buff");
+                                }
+
+                            CheckConditions(cardToBuff);
+
+                            Debug.Log("Buffed card did " + cardToBuff.viz.card.effect.cardEffectActionData.tempEffectValue + " damage.");
+
+                            temporaryPlayerQueue.Clear();
+                            
+                            }
+                    }
             }
 
         else
@@ -46,7 +76,7 @@ public class ActionQueue : MonoBehaviour
                         {
                             cardToBuff = cardToQueue;
 
-                            Debug.Log(cardToBuff.viz.card.effect.cardEffectActionData.name + " has become the buffed action card");
+                            Debug.Log(cardToBuff.viz.card.effect.cardEffectActionData.name + " has become the buffed action card and had a damage value of " + cardToBuff.viz.card.effect.cardEffectActionData.effectValue);
                             
                             foreach (CardInstance damageBuffCard in temporaryPlayerQueue)
                                 {   
@@ -56,7 +86,7 @@ public class ActionQueue : MonoBehaviour
 
                             CheckConditions(cardToBuff);
 
-                            Debug.Log("Buffed card did" + cardToBuff.viz.card.effect.cardEffectActionData.effectValue + " damage.");
+                            Debug.Log("Buffed card did " + cardToBuff.viz.card.effect.cardEffectActionData.tempEffectValue + " damage.");
 
                             temporaryPlayerQueue.Clear();
                             
@@ -76,7 +106,7 @@ public class ActionQueue : MonoBehaviour
             case EffectDataType.damage:
                 DamageAction damageAction = new DamageAction(queuedCard);
                 damageAction.enemyUnit = enemyUnit;
-                damageAction.ApplyEffectAction(cardEffectActionData);
+                damageAction.ApplyEffectAction(queuedCard.viz.card.effect.cardEffectActionData);
                 break;
 
             case EffectDataType.defend:
@@ -92,7 +122,7 @@ public class ActionQueue : MonoBehaviour
                 break;
             case EffectDataType.damagebuff:
                 DamageBuffAction damageBuffAction = new DamageBuffAction(cardToBuff);
-                damageBuffAction.ApplyEffectAction(cardEffectActionData);
+                damageBuffAction.ApplyEffectAction(queuedCard.viz.card.effect.cardEffectActionData);
                 break;
         }
     }

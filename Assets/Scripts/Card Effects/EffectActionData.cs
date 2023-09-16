@@ -9,6 +9,11 @@ public struct EffectActionData
 {
     public EffectDataType type;
     public int effectValue;
+
+    public int tempEffectValue;
+
+    
+
     public string name;
 }
 }

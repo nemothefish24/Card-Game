@@ -919,7 +919,7 @@ public class CardCalculator : MonoBehaviour
             }
             foreach (KeyValuePair<int, int> entry in D)
             {
-                Debug.Log($"Card: {entry.Key}, Count: {entry.Value}");
+                //Debug.Log($"Card: {entry.Key}, Count: {entry.Value}");
             }
             //to access specific num - NOTE THAT THIS MIGHT NOT WORK PROPERLY AS DICTIONARIES DONT HAVE DEFINED ORDER, CHECK LATER
             foreach (KeyValuePair<int, int> entry in D)

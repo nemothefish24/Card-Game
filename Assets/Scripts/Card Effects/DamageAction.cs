@@ -20,12 +20,13 @@ public class DamageAction : EffectAction
         
         affectedEnemyUnit = battleSystemScript.GetComponent<BattleSystem>().enemyUnit;
         actionCardData = passedActionCard.viz.card.effect.cardEffectActionData;
+        
     }
 
     public override void ApplyEffectAction(EffectActionData data)
     {   
-        Debug.Log("Action about to execute for value" + data.effectValue);
-        affectedEnemyUnit.currentHP -= actionCardData.effectValue;
+        Debug.Log(data.name +" action about to execute for value " + data.tempEffectValue);
+        affectedEnemyUnit.currentHP -= actionCardData.tempEffectValue;
         Debug.Log("EnemyHP is now" + affectedEnemyUnit.currentHP);
     }
 }

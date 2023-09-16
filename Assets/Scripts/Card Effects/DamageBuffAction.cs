@@ -18,11 +18,12 @@ public class DamageBuffAction : EffectAction
     {
         battleSystemScript = GameObject.Find("BattleSystem");
         affectedCard = cardPassed;
+        affectedCard.viz.card.effect.cardEffectActionData.tempEffectValue = affectedCard.viz.card.effect.cardEffectActionData.effectValue;
     }
 
     public override void ApplyEffectAction(EffectActionData data)
     {
-        affectedCard.viz.card.effect.cardEffectActionData.effectValue += data.effectValue;
+        affectedCard.viz.card.effect.cardEffectActionData.tempEffectValue += data.effectValue;
     }
 }
 }

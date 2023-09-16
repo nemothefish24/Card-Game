@@ -26,6 +26,7 @@ public class CardEffect : ScriptableObject
         cardInstance = cardInst;
         card = cardInst.viz.card;
         
+        
 
     }
     

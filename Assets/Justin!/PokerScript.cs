@@ -57,7 +57,7 @@ public class PokerScript : MonoBehaviour
             Shuffle(deck);
             foreach (string card in deck)
             {
-                print(card);
+                //print(card);
             }
             PokerDeal();
             FlipEm();
