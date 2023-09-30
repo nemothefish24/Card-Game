@@ -17,7 +17,7 @@ public class DefendAction : EffectAction
     }
     public override void ApplyEffectAction(EffectActionData data)
     {
-        affectedPlayerUnit.currentShield += data.effectValue;
+        affectedPlayerUnit.currentShield += data.tempEffectValue;
     }
 }
 }
