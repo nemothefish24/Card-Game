@@ -73,7 +73,7 @@ public class ActionQueue : MonoBehaviour
                 }
 
                 if (cardToQueue.viz.card.effect.cardEffectActionData.type.ToString() == "damage")
-                        {
+                {
                             cardToBuff = cardToQueue;
 
                             Debug.Log(cardToBuff.viz.card.effect.cardEffectActionData.name + " has become the buffed action card and had a damage value of " + cardToBuff.viz.card.effect.cardEffectActionData.effectValue);
@@ -90,9 +90,16 @@ public class ActionQueue : MonoBehaviour
 
                             temporaryPlayerQueue.Clear();
                             
-                        }
+                }
 
-        }
+                if (cardToQueue.viz.card.effect.cardEffectActionData.type.ToString() == "defend")
+                {
+                    CheckConditions(cardToQueue);
+                    Debug.Log(cardToQueue.viz.card.effect.cardEffectActionData.name + "has applied a shield of " + cardToQueue.viz.card.effect.cardEffectActionData.tempEffectValue);
+                    temporaryPlayerQueue.Clear();
+                }
+
+            }
 
     
     }
@@ -110,9 +117,9 @@ public class ActionQueue : MonoBehaviour
                 break;
 
             case EffectDataType.defend:
-                DefendAction defendAction = new DefendAction();
+                DefendAction defendAction = new DefendAction(queuedCard);
                 defendAction.playerUnit = playerUnit;
-                defendAction.ApplyEffectAction(cardEffectActionData);
+                defendAction.ApplyEffectAction(queuedCard.viz.card.effect.cardEffectActionData);
                 break;
 
             case EffectDataType.heal:

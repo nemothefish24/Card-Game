@@ -2249,6 +2249,7 @@ MonoBehaviour:
   cardEffectActionData:
     type: 0
     effectValue: 0
+    tempEffectValue: 0
     name: 
   playerQueue: {fileID: 1302535418}
   temporaryPlayerQueue: []

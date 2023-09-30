@@ -15,4 +15,5 @@ MonoBehaviour:
   cardEffectActionData:
     type: 2
     effectValue: 1
+    tempEffectValue: 1
     name: Shades

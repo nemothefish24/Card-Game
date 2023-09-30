@@ -10,10 +10,13 @@ public class DefendAction : EffectAction
 
     Unit affectedPlayerUnit;
 
-    public DefendAction()
+    EffectActionData defendCardData;
+
+    public DefendAction(CardInstance passedDefendCard)
     {
         battleSystemScript = GameObject.Find("BattleSystem");
         affectedPlayerUnit = battleSystemScript.GetComponent<BattleSystem>().playerUnit;
+        defendCardData = passedDefendCard.viz.card.effect.cardEffectActionData;
     }
     public override void ApplyEffectAction(EffectActionData data)
     {
